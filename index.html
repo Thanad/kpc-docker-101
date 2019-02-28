@@ -295,7 +295,7 @@
             graph LR
             A(Dockerfile)
             B[image]
-            C[container]
+            C(container)
             D(registry)
             A--build-->B
             B--run-->C
@@ -332,6 +332,7 @@ ENTRYPOINT
         </code></pre>
         <div class="notes">
         <p>
+            https://docs.docker.com/engine/reference/builder/
         </p>
         </div>
     </div>
@@ -395,11 +396,11 @@ docker run --name myadmin -d --link mysql_db_server:db -p 8080:80 phpmyadmin/php
         <pre>
         <code>
 docker-compose up # docker run for each service in yml file
-docker-compose up svc1 svc2  # docker run for svc1 and svc2
+docker-compose up web blog  # docker run for web and blog
 docker-compose down # stop all services
-docker-compose stop svc1 svc2 # stop svc1 and svc2
+docker-compose stop web blog # stop web and blog
 docker-compose logs [svc] [-f] [--tail=N]
-docker-compose exec svc command
+docker-compose exec blog sh
         </code>
         </pre>
         <div class="notes">
